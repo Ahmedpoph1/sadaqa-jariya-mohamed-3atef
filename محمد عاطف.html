@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صدقة جارية لمحمد عاطف - أذكار وتسبيح</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #E8F5E9;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+        body { font-family: 'Tajawal', sans-serif; margin:0; padding:0; background:#f4f4f4; color:var(--text-color); text-align:center; }
+        header { background-color: var(--primary-color); color: var(--white); padding: 20px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        header h1 { margin:0; font-size:1.8rem; }
+        header p { margin:5px 0 0; opacity:0.9; font-size:0.9rem; }
+        .container { max-width:800px; margin:20px auto; padding:0 15px; }
+
+        .card { background:var(--white); border-radius:15px; padding:20px; margin-bottom:20px; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
+        .section-title { color:var(--primary-color); border-bottom:2px solid var(--secondary-color); padding-bottom:10px; margin-bottom:20px; }
+
+        .masbaha-display { font-size:4rem; color:var(--primary-color); font-weight:bold; margin:20px 0; }
+        .btn { background-color:var(--primary-color); color:var(--white); border:none; padding:15px 40px; font-size:1.2rem; border-radius:50px; cursor:pointer; transition: transform 0.1s; box-shadow:0 4px 6px rgba(0,0,0,0.2); }
+        .btn:active { transform: scale(0.95); }
+        .btn-reset { background-color:#c62828; padding:10px 20px; font-size:1rem; margin-top:15px; }
+
+        .dhikr-item { background-color:var(--secondary-color); padding:15px; border-radius:10px; margin-bottom:10px; text-align:right; border-right:5px solid var(--primary-color); }
+        .dhikr-text { font-size:1.1rem; line-height:1.6; }
+
+        audio { width:100%; margin-top:10px; }
+
+        footer { margin-top:40px; padding:20px; background-color:#333; color:#ccc; font-size:0.9rem; position:relative; }
+        .author { font-size:0.8rem; position:absolute; left:10px; bottom:5px; color:#aaa; }
+
+        .counter-container { display:flex; flex-direction:column; gap:15px; align-items:center; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>صدقة جارية لمحمد عاطف</h1>
+        <p>نسأل الله أن يتقبلها ويجعلها نورًا له في قبره</p>
+    </header>
+
+    <div class="container">
+
+        <!-- إذاعة القرآن الكريم -->
+        <div class="card">
+            <h2 class="section-title">🔊 استماع القرآن الكريم</h2>
+            <p>استمع للقرآن الكريم من إذاعة القاهرة مباشرة</p>
+            <audio controls>
+                <source src="https://n02.radiojar.com/8s5u5tpdtwzuv?rj-ttl=5&rj-tok=AAABjSBt1XkA2iW_7gX6gqfCAA" type="audio/mpeg">
+                متصفحك لا يدعم مشغل الصوت.
+            </audio>
+        </div>
+
+        <!-- عدادات التسبيح والدعاء -->
+        <div class="card">
+            <h2 class="section-title">📿 استغفر لمحمد</h2>
+            <div class="counter-container">
+
+                <!-- مسبحة التسبيح -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">سبح</div>
+                    <div id="tasbih-counter" class="masbaha-display">0</div>
+                    <button class="btn" onclick="increment('tasbih')">سبح</button>
+                    <button class="btn btn-reset" onclick="reset('tasbih')">تصفير</button>
+                </div>
+
+                <!-- مسبحة الاستغفار -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">استغفار</div>
+                    <div id="istighfar-counter" class="masbaha-display">0</div>
+                    <button class="btn" onclick="increment('istighfar')">استغفر الله</button>
+                    <button class="btn btn-reset" onclick="reset('istighfar')">تصفير</button>
+                </div>
+
+                <!-- مسبحة الدعاء للمتوفي -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">دعاء للمتوفي محمد عاطف</div>
+                    <div id="dua-counter" class="masbaha-display">0</div>
+                    <button class="btn" onclick="increment('dua')">اللهم ارحمه</button>
+                    <button class="btn btn-reset" onclick="reset('dua')">تصفير</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- الأذكار والدعاء المكتوب -->
+        <div class="card">
+            <h2 class="section-title">📖 أذكار واستغفار</h2>
+
+            <div class="dhikr-item">
+                <div class="dhikr-text">"اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله، ووسع مدخله، واغسله بالماء والثلج والبرد، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس، وأبدله دارا خيرا من داره، وأهلا خيرا من أهله، وزوجا خيرا من زوجه، وأدخله الجنة، وأعذه من عذاب القبر، ومن عذاب النار
+
+</div>
+            
+            </div>
+
+            <div class="dhikr-item">
+                <div class="dhikr-text">"اللهم اغفر له وارحمه، وارفع درجته، وأعظم أجره، وأتمم نوره، وأفسح له في قبره، وألحقه بنبيه” . اللهم أنت ربنا وربه، خلقته ورزقته، أحييته وكفيته، فاغفر لنا وله، ولا تحرمنا أجره ولا تضلنا بعده” . اللهم أصبح عبدك – إن كان صباحا – وإن كان مساء قال: اللهم أمسى عبدك قد تخلى من الدنيا وتركها لأهلها، وافتقر إليك واستغنيت عنه، وكان يشهد أن لا إله إلا أنت وأن محمدا عبدك ورسولك، فاغفر له وتجاوز عنه "</div>
+            </div>
+
+            <div class="dhikr-item">
+                <div class="dhikr-text">"اللّهُـمَّ اجعل محمد عاطف من أهل الجنة، واغفر له ذنوبه، ونور قبره، واجمعنا به في الفردوس الأعلى"</div>
+            </div>
+
+            <div style="margin-top:20px;">
+                <a href="https://quran.com/ar" target="_blank" style="color:var(--primary-color); text-decoration:none; font-weight:bold;">
+                    لقراءة القرآن كاملاً اضغط هنا &larr;
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>اللهم تقبل هذه الصدقة الجارية عن محمد عاطف، واجعلها له نوراً في قبره.</p>
+        <div class="author">by Ahmed Ashraf</div>
+    </footer>
+
+    <script>
+        // تعريف العدادات
+        const counters = { tasbih: 0, istighfar: 0, dua: 0 };
+
+        function increment(type) {
+            counters[type]++;
+            updateDisplay(type);
+            if(navigator.vibrate) navigator.vibrate(50);
+        }
+
+        function reset(type) {
+            if(confirm('هل تريد تصفير العداد؟')) {
+                counters[type] = 0;
+                updateDisplay(type);
+            }
+        }
+
+        function updateDisplay(type) {
+            if(type === 'tasbih') document.getElementById('tasbih-counter').innerText = counters[type];
+            if(type === 'istighfar') document.getElementById('istighfar-counter').innerText = counters[type];
+            if(type === 'dua') document.getElementById('dua-counter').innerText = counters[type];
+        }
+    </script>
+</body>
+</html>
