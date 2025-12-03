@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صدقة جارية لمحمد عاطف - أذكار وتسبيح</title>
+    <title>صدقة جارية لمحمد عاطف</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -21,20 +21,25 @@
         .card { background:var(--white); border-radius:15px; padding:20px; margin-bottom:20px; box-shadow:0 4px 6px rgba(0,0,0,0.1); }
         .section-title { color:var(--primary-color); border-bottom:2px solid var(--secondary-color); padding-bottom:10px; margin-bottom:20px; }
 
-        .masbaha-display { font-size:4rem; color:var(--primary-color); font-weight:bold; margin:20px 0; }
-        .btn { background-color:var(--primary-color); color:var(--white); border:none; padding:15px 40px; font-size:1.2rem; border-radius:50px; cursor:pointer; transition: transform 0.1s; box-shadow:0 4px 6px rgba(0,0,0,0.2); }
+        .masbaha-display { font-size:2rem; color:var(--primary-color); font-weight:bold; margin:10px 0; }
+        .btn { background-color:var(--primary-color); color:var(--white); border:none; padding:8px 20px; font-size:1rem; border-radius:50px; cursor:pointer; transition: transform 0.1s; box-shadow:0 4px 6px rgba(0,0,0,0.2); }
         .btn:active { transform: scale(0.95); }
-        .btn-reset { background-color:#c62828; padding:10px 20px; font-size:1rem; margin-top:15px; }
+        .btn-reset { background-color:#c62828; padding:6px 15px; font-size:0.9rem; margin-top:8px; }
 
-        .dhikr-item { background-color:var(--secondary-color); padding:15px; border-radius:10px; margin-bottom:10px; text-align:right; border-right:5px solid var(--primary-color); }
-        .dhikr-text { font-size:1.1rem; line-height:1.6; }
+        .dhikr-item { background-color:var(--secondary-color); padding:10px 15px; border-radius:10px; margin-bottom:8px; text-align:center; border-right:5px solid var(--primary-color); display:flex; align-items:center; justify-content:space-between; gap:10px; }
+        .dhikr-text { font-size:1rem; line-height:1.3; flex:1; text-align:right; }
+        .dhikr-counter-section { display:flex; align-items:center; gap:8px; }
+        
+        .counter-container { display:grid; grid-template-columns:repeat(2, 1fr); gap:10px; }
+        
+        @media (max-width: 600px) {
+            .counter-container { grid-template-columns:1fr; }
+        }
 
         audio { width:100%; margin-top:10px; }
 
         footer { margin-top:40px; padding:20px; background-color:#333; color:#ccc; font-size:0.9rem; position:relative; }
         .author { font-size:0.8rem; position:absolute; left:10px; bottom:5px; color:#aaa; }
-
-        .counter-container { display:flex; flex-direction:column; gap:15px; align-items:center; }
     </style>
 </head>
 <body>
@@ -60,28 +65,154 @@
             <h2 class="section-title">📿 استغفر لمحمد</h2>
             <div class="counter-container">
 
-                <!-- مسبحة التسبيح -->
+                <!-- مسبحة اللهم ارحمه -->
                 <div class="dhikr-item">
-                    <div class="dhikr-text">سبح</div>
-                    <div id="tasbih-counter" class="masbaha-display">0</div>
-                    <button class="btn" onclick="increment('tasbih')">سبح</button>
-                    <button class="btn btn-reset" onclick="reset('tasbih')">تصفير</button>
+                    <div class="dhikr-text">اللهم ارحمه</div>
+                    <div class="dhikr-counter-section">
+                        <div id="rahma-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('rahma')">+</button>
+                        <button class="btn btn-reset" onclick="reset('rahma')">↻</button>
+                    </div>
                 </div>
 
-                <!-- مسبحة الاستغفار -->
+                <!-- مسبحة اللهم اغفر له -->
                 <div class="dhikr-item">
-                    <div class="dhikr-text">استغفار</div>
-                    <div id="istighfar-counter" class="masbaha-display">0</div>
-                    <button class="btn" onclick="increment('istighfar')">استغفر الله</button>
-                    <button class="btn btn-reset" onclick="reset('istighfar')">تصفير</button>
+                    <div class="dhikr-text">اللهم اغفر له</div>
+                    <div class="dhikr-counter-section">
+                        <div id="ghafir-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('ghafir')">+</button>
+                        <button class="btn btn-reset" onclick="reset('ghafir')">↻</button>
+                    </div>
                 </div>
 
-                <!-- مسبحة الدعاء للمتوفي -->
+                <!-- مسبحة اللهم اعف عنه -->
                 <div class="dhikr-item">
-                    <div class="dhikr-text">دعاء للمتوفي محمد عاطف</div>
-                    <div id="dua-counter" class="masbaha-display">0</div>
-                    <button class="btn" onclick="increment('dua')">اللهم ارحمه</button>
-                    <button class="btn btn-reset" onclick="reset('dua')">تصفير</button>
+                    <div class="dhikr-text">اللهم اعف عنه</div>
+                    <div class="dhikr-counter-section">
+                        <div id="afu-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('afu')">+</button>
+                        <button class="btn btn-reset" onclick="reset('afu')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة اللهم ارفع درجاته -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">اللهم ارفع درجاته</div>
+                    <div class="dhikr-counter-section">
+                        <div id="daraja-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('daraja')">+</button>
+                        <button class="btn btn-reset" onclick="reset('daraja')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة أستغفر الله -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">أستغفر الله</div>
+                    <div class="dhikr-counter-section">
+                        <div id="istighfar-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('istighfar')">+</button>
+                        <button class="btn btn-reset" onclick="reset('istighfar')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة سبحان الله -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">سبحان الله</div>
+                    <div class="dhikr-counter-section">
+                        <div id="subhan-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('subhan')">+</button>
+                        <button class="btn btn-reset" onclick="reset('subhan')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة الحمدلله -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">الحمدلله</div>
+                    <div class="dhikr-counter-section">
+                        <div id="hamd-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('hamd')">+</button>
+                        <button class="btn btn-reset" onclick="reset('hamd')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة الله أكبر -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">الله أكبر</div>
+                    <div class="dhikr-counter-section">
+                        <div id="takbir-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('takbir')">+</button>
+                        <button class="btn btn-reset" onclick="reset('takbir')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة لا حول ولا قوة إلا بالله -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">لا حول ولا قوة إلا بالله</div>
+                    <div class="dhikr-counter-section">
+                        <div id="hawqala-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('hawqala')">+</button>
+                        <button class="btn btn-reset" onclick="reset('hawqala')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة سبحان الله وبحمده -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">سبحان الله وبحمده</div>
+                    <div class="dhikr-counter-section">
+                        <div id="subhan-hamd-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('subhan-hamd')">+</button>
+                        <button class="btn btn-reset" onclick="reset('subhan-hamd')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة سبحان الله العظيم -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">سبحان الله العظيم</div>
+                    <div class="dhikr-counter-section">
+                        <div id="subhan-azeem-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('subhan-azeem')">+</button>
+                        <button class="btn btn-reset" onclick="reset('subhan-azeem')">↻</button>
+                    </div>
+                </div>
+
+                <!-- مسبحة لا إله إلا الله -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">لا إله إلا الله</div>
+                    <div class="dhikr-counter-section">
+                        <div id="tahlil-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('tahlil')">+</button>
+                        <button class="btn btn-reset" onclick="reset('tahlil')">↻</button>
+                    </div>
+                </div>
+
+                <!-- إضافة ذكر جديد 1 -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">أضف ذكرك هنا</div>
+                    <div class="dhikr-counter-section">
+                        <div id="custom1-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('custom1')">+</button>
+                        <button class="btn btn-reset" onclick="reset('custom1')">↻</button>
+                    </div>
+                </div>
+
+                <!-- إضافة ذكر جديد 2 -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">أضف ذكرك هنا</div>
+                    <div class="dhikr-counter-section">
+                        <div id="custom2-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('custom2')">+</button>
+                        <button class="btn btn-reset" onclick="reset('custom2')">↻</button>
+                    </div>
+                </div>
+
+                <!-- إضافة ذكر جديد 3 -->
+                <div class="dhikr-item">
+                    <div class="dhikr-text">أضف ذكرك هنا</div>
+                    <div class="dhikr-counter-section">
+                        <div id="custom3-counter" class="masbaha-display">0</div>
+                        <button class="btn" onclick="increment('custom3')">+</button>
+                        <button class="btn btn-reset" onclick="reset('custom3')">↻</button>
+                    </div>
                 </div>
 
             </div>
@@ -92,24 +223,56 @@
             <h2 class="section-title">📖 أذكار واستغفار</h2>
 
             <div class="dhikr-item">
-                <div class="dhikr-text">"اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله، ووسع مدخله، واغسله بالماء والثلج والبرد، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس، وأبدله دارا خيرا من داره، وأهلا خيرا من أهله، وزوجا خيرا من زوجه، وأدخله الجنة، وأعذه من عذاب القبر، ومن عذاب النار
-
-</div>
-            
+                <div class="dhikr-text">"اللهم اغفر له وارحمه، وعافه واعف عنه، وأكرم نزله، ووسع مدخله، واغسله بالماء والثلج والبرد، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس، وأبدله دارا خيرا من داره، وأهلا خيرا من أهله، وزوجا خيرا من زوجه، وأدخله الجنة، وأعذه من عذاب القبر، ومن عذاب النار"</div>
             </div>
 
             <div class="dhikr-item">
-                <div class="dhikr-text">"اللهم اغفر له وارحمه، وارفع درجته، وأعظم أجره، وأتمم نوره، وأفسح له في قبره، وألحقه بنبيه” . اللهم أنت ربنا وربه، خلقته ورزقته، أحييته وكفيته، فاغفر لنا وله، ولا تحرمنا أجره ولا تضلنا بعده” . اللهم أصبح عبدك – إن كان صباحا – وإن كان مساء قال: اللهم أمسى عبدك قد تخلى من الدنيا وتركها لأهلها، وافتقر إليك واستغنيت عنه، وكان يشهد أن لا إله إلا أنت وأن محمدا عبدك ورسولك، فاغفر له وتجاوز عنه "</div>
+                <div class="dhikr-text">"اللهم اغفر له وارحمه، وارفع درجته، وأعظم أجره، وأتمم نوره، وأفسح له في قبره، وألحقه بنبيه" . اللهم أنت ربنا وربه، خلقته ورزقته، أحييته وكفيته، فاغفر لنا وله، ولا تحرمنا أجره ولا تضلنا بعده" . اللهم أصبح عبدك – إن كان صباحا – وإن كان مساء قال: اللهم أمسى عبدك قد تخلى من الدنيا وتركها لأهلها، وافتقر إليك واستغنيت عنه، وكان يشهد أن لا إله إلا أنت وأن محمدا عبدك ورسولك، فاغفر له وتجاوز عنه "</div>
             </div>
 
             <div class="dhikr-item">
-                <div class="dhikr-text">"اللّهُـمَّ اجعل محمد عاطف من أهل الجنة، واغفر له ذنوبه، ونور قبره، واجمعنا به في الفردوس الأعلى"</div>
+                <div class="dhikr-text">"اللّهُـمَّ اجعل محمد عاطف من أهل الجنة، واغفر له ذنوبه، ونور قبره، واجمعنا به في الفردوس الأعلى"</div>
+            </div>
+
+            <div class="dhikr-item">
+                <div class="dhikr-text">"اللهمّ احمه تحت الأرض، واستره يوم العرض، ولا تخزه يوم يبعثون "يوم لا ينفع مالٌ ولا بنون إلّا من أتى الله بقلبٍ سليم". اللهمّ يمّن كتابه، ويسّر حسابه، وثقّل بالحسنات ميزانه، وثبّت على الصّراط أقدامه، وأسكنه في أعلى الجنّات، بجوار حبيبك ومصطفاك صلّى الله عليه وسلّم."</div>
+            </div>
+
+            <div class="dhikr-item">
+                <div class="dhikr-text">"اللهمّ اعف عنه، فإنّك القائل "ويعفو عن كثير". اللهمّ إنّه جاء ببابك، وأناخ بجنابك، فَجُد عليه بعفوك، وإكرامك، وجود إحسانك. اللهمّ إنّ رحمتك وسعت كلّ شيء، فارحمه رحمةً تطمئنّ بها نفسه، وتقرّ بها عينه. اللهمّ احشره مع المتّقين إلى الرّحمن وفداً. اللهمّ احشره مع أصحاب اليمين، واجعل تحيّته سلامٌ لك من أصحاب اليمين. اللهمّ بشّره بقولك "كلوا واشربوا هنيئاً بما أسلفتم في الأيّام الخالية". اللهمّ اجعله من الّذين سعدوا في الجنّة، خالدين فيها ما دامت السّماوات والأرض. اللهمّ لا نزكّيه عليك، ولكنّا نحسبه أنّه آمن وعمل صالحاً، فاجعل له جنّتين ذواتي أفنان، بحقّ قولك: "ولمن خاف مقام ربّه جنّتان""</div>
             </div>
 
             <div style="margin-top:20px;">
                 <a href="https://quran.com/ar" target="_blank" style="color:var(--primary-color); text-decoration:none; font-weight:bold;">
                     لقراءة القرآن كاملاً اضغط هنا &larr;
                 </a>
+            </div>
+        </div>
+
+        <!-- سورة يس -->
+        <div class="card">
+            <h2 class="section-title">📿 سورة يس</h2>
+            <div style="text-align:center; margin:20px 0;">
+                <p style="color:#666; margin-bottom:15px;">اقرأ واستمع لسورة يس</p>
+                
+                <!-- مشغل الصوت -->
+                <div style="margin-bottom:20px;">
+                    <audio controls style="width:100%;">
+                        <source src="https://server8.mp3quran.net/maher/036.mp3" type="audio/mpeg">
+                        متصفحك لا يدعم مشغل الصوت.
+                    </audio>
+                </div>
+
+                <!-- رابط للقراءة -->
+                <div style="background:#E8F5E9; padding:15px; border-radius:10px; margin-top:15px;">
+                    <p style="margin:0 0 10px 0; color:#2E7D32; font-weight:bold;">لقراءة سورة يس كاملة مع التفسير:</p>
+                    <a href="https://quran.com/36" target="_blank" 
+                       style="display:inline-block; background:#2E7D32; color:white; padding:12px 30px; 
+                              border-radius:25px; text-decoration:none; font-weight:bold; 
+                              box-shadow:0 2px 5px rgba(0,0,0,0.2); transition:transform 0.2s;">
+                        📖 اقرأ سورة يس
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -122,7 +285,12 @@
 
     <script>
         // تعريف العدادات
-        const counters = { tasbih: 0, istighfar: 0, dua: 0 };
+        const counters = {
+            rahma: 0, ghafir: 0, afu: 0, daraja: 0,
+            istighfar: 0, subhan: 0, hamd: 0, takbir: 0,
+            hawqala: 0, 'subhan-hamd': 0, 'subhan-azeem': 0, tahlil: 0,
+            custom1: 0, custom2: 0, custom3: 0
+        };
 
         function increment(type) {
             counters[type]++;
@@ -138,9 +306,11 @@
         }
 
         function updateDisplay(type) {
-            if(type === 'tasbih') document.getElementById('tasbih-counter').innerText = counters[type];
-            if(type === 'istighfar') document.getElementById('istighfar-counter').innerText = counters[type];
-            if(type === 'dua') document.getElementById('dua-counter').innerText = counters[type];
+            const elementId = type + '-counter';
+            const element = document.getElementById(elementId);
+            if(element) {
+                element.innerText = counters[type];
+            }
         }
     </script>
 </body>
